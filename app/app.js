@@ -10,6 +10,7 @@ import 'babel-polyfill';
 
 // Import all the third party stuff
 import React from 'react';
+import { render } from 'react-dom';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { applyRouterMiddleware, Router, browserHistory } from 'react-router';
@@ -22,7 +23,7 @@ import 'sanitize.css/sanitize.css';
 import App from 'containers/App';
 
 // Import selector for `syncHistoryWithStore`
-import { makeSelectLocationState } from 'containers/App/selectors';
+// import { makeSelectLocationState } from 'containers/App/selectors';
 
 // Import Language Provider
 import LanguageProvider from 'containers/LanguageProvider';
@@ -43,7 +44,7 @@ import { translationMessages } from './i18n';
 import './global-styles';
 
 // Import routes
-import createRoutes from './routes';
+// import createRoutes from './routes';
 
 // Observe loading of Open Sans (to remove open sans, remove the <link> tag in
 // the index.html file and this observer)
@@ -66,42 +67,46 @@ const store = configureStore(initialState, browserHistory);
 // Sync history and store, as the react-router-redux reducer
 // is under the non-default key ("routing"), selectLocationState
 // must be provided for resolving how to retrieve the "route" in the state
-const history = syncHistoryWithStore(browserHistory, store, {
-  selectLocationState: makeSelectLocationState(),
-});
+// const history = syncHistoryWithStore(browserHistory, store, {
+//   selectLocationState: makeSelectLocationState(),
+// });
 
 // Set up the router, wrapping all Routes in the App component
-const rootRoute = {
-  component: App,
-  childRoutes: createRoutes(store),
-};
+// const rootRoute = {
+//   component: App,
+//   childRoutes: createRoutes(store),
+// };
 
-const render = (messages) => {
-  ReactDOM.render(
-    <Provider store={store}>
-      <LanguageProvider messages={messages}>
-        <Router
-          history={history}
-          routes={rootRoute}
-          render={
-            // Scroll to top when going to a new page, imitating default browser
-            // behaviour
-            applyRouterMiddleware(useScroll())
-          }
-        />
-      </LanguageProvider>
-    </Provider>,
-    document.getElementById('app')
-  );
-};
+// const render = (messages) => {
+//   ReactDOM.render(
+//     <Provider store={store}>
+//       <LanguageProvider messages={messages}>
+//         <Router
+//           history={history}
+//           routes={rootRoute}
+//           render={
+//             // Scroll to top when going to a new page, imitating default browser
+//             // behaviour
+//             applyRouterMiddleware(useScroll())
+//           }
+//         />
+//       </LanguageProvider>
+//     </Provider>,
+//     document.getElementById('app')
+//   );
+// };
+
+render(
+  <App/>, document.getElementById('app')
+);
 
 // Hot reloadable translation json files
 if (module.hot) {
   // modules.hot.accept does not accept dynamic dependencies,
   // have to be constants at compile-time
-  module.hot.accept('./i18n', () => {
-    render(translationMessages);
-  });
+  // module.hot.accept('./i18n', () => {
+  //   render(translationMessages);
+  // });
 }
 
 // Chunked polyfill for browsers without Intl support

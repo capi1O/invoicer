@@ -1,0 +1,66 @@
+{
+	"document":
+	{
+		"type" : "quote",
+    "name" : "Wharehouse Project",
+		"number": "GLC93221",
+		"date" : "12/01/2013",
+		"validity_date" : "01/02/2013",
+		"client_id": "CL_MCRSFT"
+	},
+	"prospect":
+	{
+		"name": "John Doe",
+    "company": "ACME Inc.",
+		"description": "IT consulting",
+		"address_line_1": "5th avec",
+		"address_line_2": "NY2441 New York",
+		"email": "john.doe@acme.com",
+		"siren" : "221 321 218 00023",
+		"phone_number": "555 775 887",
+    "iban": "US01 2010 4016 7312 2144 5428 090"
+	},
+	"customer":
+	{
+		"company": "Microsoft Inc.",
+		"address_line_1": "1 valley rd",
+		"address_line_2": "Redmond, USA",
+		"website": "www.microsoft.com",
+    "rcs" : "123 456 789"
+	},
+  "items":
+  [
+    {
+      "description":"Windows Software Improvment",
+      "sub_items":
+      [
+        "Security breach hot fix",
+        "Documentation for codebase",
+        "Opensourcing WinNT - Community management",
+        "Add support for non Microsoft browsers"
+      ],
+      "quantity":"1",
+      "unit_price":"48000"
+    },
+    {
+      "description":"Windows Phone",
+      "sub_items":
+      [
+        "Switch Kernel to Android CyanogenMod",
+        "Rooting by default"
+      ],
+      "quantity":"1",
+      "unit_price":"68000"
+    }
+  ],
+  "delivery":
+  {
+    "date": "6 months from laucnhing date",
+    "conditions": "Full ownership."
+  },
+  "payment":
+  {
+    "schedule": "100% upfront",
+    "type": "wire transfer"
+  }
+}

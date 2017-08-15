@@ -1,0 +1,389 @@
+/*
+
+Theme Name:
+Theme URI:
+Description:
+Version:
+Author:
+
+*/
+/* global mixins */
+.clip
+{
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  -o-background-clip: padding;
+  background-clip: padding-box;
+}
+
+/* handy shortcuts */
+.clear
+{
+  /* for use on :after */
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* global color variables */
+/* global layout */
+body
+{
+  font-size: 14px;
+  margin: 0px;
+  text-align: center;
+  background: #ddd;
+  color: #333;
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 40px 0;
+  line-height: 1.5em;
+}
+
+a
+{
+  color: #333;
+  text-decoration: underline;
+}
+
+strong
+{
+  font-weight: bold;
+}
+em
+{
+  font-style: italic;
+}
+
+h1
+{
+  font-size: 28px;
+  font-weight: bold;
+  padding: 20px 0 0px;
+}
+
+h2, h3, h4, h5, h6, .title
+{
+  font-weight: bold;
+  padding-bottom: 4px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #dddddd;
+}
+
+h2, .title
+{
+  font-size: 16px;
+}
+
+h3
+{
+  font-size: 14px;
+}
+
+h4
+{
+  font-size: 12px;
+}
+
+h5
+{
+  font-size: 11px;
+}
+
+h6
+{
+  font-size: 10px;
+}
+
+dd
+{
+  -webkit-margin-start: 0px;
+}
+
+#main
+{
+  position: relative;
+  padding: 18px;
+  max-width: 840px;
+  margin: auto;
+  background: #f5f5f5;
+  border: 10px solid #fff;
+  -webkit-box-shadow: 0 0 1px #888888;
+  -moz-box-shadow: 0 0 1px #888888;
+  -o-box-shadow: 0 0 1px #888888;
+  box-shadow: 0 0 1px #888888;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+header
+{
+  padding: 8px 0;
+  font-size: 16px;
+  font-weight: bold;
+  border-top: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+  border-width: 1px;
+  border-color: lightgray;
+  border-style: solid;
+}
+
+.quote header
+{
+  background-color: rgba(3, 169, 244, 0.28);
+}
+
+.invoice header
+{
+  background-color: rgb(200, 241, 209);
+}
+
+.doc-meta
+{
+  position: relative;
+  overflow: hidden;
+  text-align: right;
+  line-height: 1.5em;
+}
+
+.doc-meta dt
+{
+  float: left;
+  width: 46%;
+  clear: both;
+  font-weight: bold;
+}
+
+.doc-meta dd
+{
+  width: 46%;
+  float: right;
+  text-align: left;
+}
+
+#prospect, #customer
+{
+  text-align: left;
+  padding-bottom: 30px;
+}
+
+#prospect h1
+{
+  font-size: 60px;
+  margin-bottom: 15px;
+}
+
+.doc-items, .doc-totals
+{
+  text-align: left;
+  padding-bottom: 30px;
+}
+
+.doc-items table, .doc-totals table
+{
+  width: 100%;
+  font-size: 12px;
+}
+
+.doc-items caption, .doc-totals caption
+{
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 4px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #dddddd;
+  text-align: left;
+}
+
+.doc-items thead th, .doc-totals thead th
+{
+  font-weight: bold;
+  padding: 6px 5px;
+  background: #e5e5e5;
+  white-space: nowrap;
+}
+
+.doc-items thead tc, .doc-totals thead tc
+{
+  text-align: center;
+}
+.doc-items thead th:first-of-type, .doc-totals thead th:first-of-type
+{
+  padding-left: 8px;
+}
+.doc-items thead th:last-of-type, .doc-totals thead th:last-of-type
+{
+  text-align: right;
+  padding-right: 8px;
+}
+.doc-items tbody tr th, .doc-totals tbody tr th
+{
+  padding-left: 8px;
+}
+.doc-items tbody tr td:last-of-type, .doc-totals tbody tr td:last-of-type
+{
+  text-align: right;
+  padding-right: 8px;
+}
+
+.doc-items tbody tr:nth-of-type(even) th,
+.doc-totals tbody tr:nth-of-type(even) th,
+.doc-items tbody tr:nth-of-type(even) td,
+.doc-totals tbody tr:nth-of-type(even) td
+{
+  background: #eee;
+}
+
+.doc-items tbody th,
+.doc-totals tbody th,
+.doc-items tbody td,
+.doc-totals tbody td
+{
+  padding-top: 6px;
+  padding-bottom: 6px;
+  background: #fff;
+}
+
+.doc-items tbody td,
+.doc-totals tbody td
+{
+  text-align: center;
+  vertical-align: top;
+}
+
+.doc-totals tbody td
+{
+  font-size: 14px;
+}
+
+.doc-items tbody th ul li
+{
+  font-weight: normal;
+}
+.doc-items tfoot td, .doc-totals tfoot td
+{
+  text-align: right;
+  font-size: 11px;
+  background: #e5e5e5;
+  padding: 6px 8px;
+}
+
+
+.doc-totals em
+{
+  float: right;
+}
+.doc-notes
+{
+  text-align: left;
+  padding-bottom: 30px;
+}
+
+.doc-notes ul,
+.doc-notes ol,
+.doc-notes dl
+{
+  padding-bottom: 1em;
+}
+
+.doc-notes p
+{
+  padding-top: 5px;
+  margin-top: 5px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.doc-notes ul li
+{
+  list-style: inside disc;
+}
+.doc-notes ol li
+{
+  list-style: inside decimal;
+}
+
+#footer
+{
+  border-top: 1px solid #dddddd;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+/* some margin for middling sceens */
+@media only screen and (min-width: 420px) and (max-width: 869px) {
+  #invoice {
+    margin: 0 20px;
+  }
+}
+/* layout splits at 600 css pixels */
+@media only screen and (min-width: 700px)
+{
+  h1
+  {
+    padding: 10px 0;
+  }
+
+  #header
+  {
+    overflow: hidden;
+    padding-top: 40px;
+  }
+
+  #doc-props
+  {
+    margin-top: 20px;
+    float: right;
+    width: 50%;
+  }
+  .doc-meta
+  {
+    display: block;
+    float: left;
+    margin-right: 20px;
+  }
+
+  .doc-meta dt
+  {
+    width: auto;
+    font-weight: bold;
+    text-align: left;
+    float: none;
+  }
+
+  .doc-meta dd
+  {
+    width: auto;
+    text-align: left;
+    float: none;
+  }
+
+  #doc-props em
+  {
+    float: right;
+    margin-right: 10px;
+  }
+
+  #prospect
+  {
+    float: left;
+    width: 45%;
+    margin-right: 5%;
+  }
+
+  #customer
+  {
+    float: right;
+    width: 45%;
+    margin-left: 5%;
+    margin-top: 15px;
+  }
+
+  #footer
+  {
+    padding-top: 18px;
+    font-size: 12px;
+  }
+}
